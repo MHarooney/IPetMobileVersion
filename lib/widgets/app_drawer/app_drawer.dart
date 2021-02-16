@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:ipetmobile/responsive/orientation_layout.dart';
 import 'package:ipetmobile/responsive/screen_type_layout.dart';
 import 'package:ipetmobile/widgets/app_drawer/app_drawer_mobile.dart';
@@ -23,7 +24,7 @@ class AppDrawer extends StatelessWidget {
     return [
       DrawerOption(
         title: 'Home',
-        iconData: Icons.home,
+        iconData: FontAwesomeIcons.paw,
       ),
       DrawerOption(
         title: 'Rate App',
