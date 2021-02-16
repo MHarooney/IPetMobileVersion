@@ -30,6 +30,8 @@ dependencies:
   cupertino_icons: ^1.0.0
   provider:
   device_preview: ^0.5.5
+#https://pub.dev/packages/font_awesome_flutter
+  font_awesome_flutter: ^8.11.0
 
 dev_dependencies:
   flutter_test:

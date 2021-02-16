@@ -10,7 +10,7 @@ class AppDrawerMobile extends StatelessWidget {
   Widget build(BuildContext context) {
     var orientation = MediaQuery.of(context).orientation;
     return Container(
-      width: orientation == Orientation.portrait ? 250 : 100,
+      width: orientation == Orientation.portrait ? 230 : 100,
       decoration: BoxDecoration(color: Colors.white, boxShadow: [
         BoxShadow(
           blurRadius: 16,
