@@ -32,6 +32,8 @@ dependencies:
   device_preview: ^0.5.5
 #https://pub.dev/packages/font_awesome_flutter
   font_awesome_flutter: ^8.11.0
+#https://pub.dev/packages/country_code_picker
+  country_code_picker: ^1.7.0
 
 dev_dependencies:
   flutter_test:

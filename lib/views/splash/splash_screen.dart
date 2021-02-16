@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ipetmobile/constants/constants.dart';
-import 'package:ipetmobile/views/home/home_view.dart';
+import 'package:ipetmobile/views/login_screen/login_screen.dart';
 import 'package:ipetmobile/views/splash/components/body.dart';
 // import 'package:ipetmobile/size_config.dart';
 import 'package:ipetmobile/widgets/common/ipet_custom_scaffold.dart';
@@ -21,7 +21,7 @@ class _SplashScreenState extends State<SplashScreen> {
       Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => HomeView(),
+            builder: (context) => IPetLoginScreen(),
           ));
     });
   }

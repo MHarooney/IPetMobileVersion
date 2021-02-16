@@ -13,7 +13,7 @@ class IPetCustomScaffold extends StatelessWidget {
   const IPetCustomScaffold(
       {@required this.body,
       this.ipKey,
-      @required this.iPetTopAppBar,
+      this.iPetTopAppBar,
       this.iPetBottomAppBar,
       this.iPetBGScaffoldColor = AppConst.kPrimaryWhiteBgColor,
       this.iPetDrawer,
