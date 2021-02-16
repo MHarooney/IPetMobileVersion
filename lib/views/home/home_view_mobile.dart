@@ -65,10 +65,7 @@ class HomeMobileLandscape extends BaseModelWidget<HomeViewModel> {
           AppDrawer(),
           Expanded(
             child: Center(
-              child: Text(
-                model.title,
-                style: TextStyle(fontSize: 35),
-              ),
+              child: DashBoardScreen(),
             ),
           )
         ],
