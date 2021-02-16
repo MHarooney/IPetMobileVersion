@@ -1,6 +1,6 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
-import 'package:ipetmobile/views/home/home_view.dart';
+import 'package:ipetmobile/views/splash/splash_screen.dart';
 
 void main() => runApp(MyApp());
 // void main() => runApp(DevicePreview(builder: (context) => MyApp()));
@@ -15,6 +15,6 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: HomeView());
+        home: SplashScreen());
   }
 }
