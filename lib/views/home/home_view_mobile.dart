@@ -44,10 +44,8 @@ class HomeMobilePortrait extends BaseModelWidget<HomeViewModel> {
       //     model.updateTitle();
       //   },
       // ),
-      body: Expanded(
-        child: Center(
-          child: Label(text: model.title),
-        ),
+      body: Center(
+        child: Label(text: model.title),
       ),
     );
   }
