@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ipetmobile/viewmodels/home_viewmodel.dart';
-import 'package:ipetmobile/views/dash_board_screen/dash_board_screen.dart';
+import 'package:ipetmobile/views/dash_board/dash_board_page_mobile.dart';
 import 'package:ipetmobile/widgets/app_drawer/app_drawer.dart';
 import 'package:ipetmobile/widgets/base_model_widget.dart';
 import 'package:ipetmobile/widgets/common/ipet_custom_scaffold.dart';
