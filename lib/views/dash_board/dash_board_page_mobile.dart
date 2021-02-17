@@ -70,129 +70,142 @@ class _DashBoardScreenState extends State<DashBoardScreen>
       ),
       iPetDrawer: AppDrawer(),
       // iPetBottomAppBar: IPetBottomCommonAppBar(tabController: _tabController),
-      iPetBottomAppBar: ValueListenableBuilder(
-          valueListenable: hideNavbar.visible,
-          builder: (context, bool value, child) => AnimatedContainer(
-              duration: Duration(milliseconds: 500),
-              height: value ? size.height * 0.117 : 0.0,
-              child: IPetBottomAppBar(tabController: _tabController))),
-      body: ListView(
-        controller: hideNavbar.controller,
-        children: <Widget>[
-          Padding(
-            padding:
-                const EdgeInsets.only(top: 20, bottom: 20, left: 30, right: 30),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                SizedBox(
-                  height: 30,
-                ),
-                Label(
-                  text: "Hi, Mahmoud",
-                  size: 25,
-                  textColor: AppConst.kPrimaryColor,
-                  // style: appTitle,
-                ),
-                IPetCustomSizedBox(
-                  height: 20,
-                ),
-                SizedBox(
-                    width: size.width * 0.7,
-                    child: Label(
-                      text:
-                          "Check out the new products, groups, events, places and more!",
-                      // style: contentBlack,
-                    )),
-                SizedBox(
-                  height: 50,
-                ),
-                // DogCard(),
-                SizedBox(
-                  height: 30,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Label(
-                      text: "Recommended".toUpperCase(),
-                      size: 17,
-                      fontWeight: FontWeight.bold,
-                    ),
-                    Label(
-                      text: "Show more",
-                      textColor: AppConst.kPrimaryColor,
-                      size: 12,
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
+      // iPetBottomAppBar: ValueListenableBuilder(
+      //     valueListenable: hideNavbar.visible,
+      //     builder: (context, bool value, child) => AnimatedContainer(
+      //         duration: Duration(milliseconds: 500),
+      //         height: value ? size.height * 0.117 : 0.0,
+      //         child: IPetBottomAppBar(tabController: _tabController))),
+      body: Stack(children: [
+        ListView(
+          controller: hideNavbar.controller,
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.only(
+                  top: 20, bottom: 20, left: 30, right: 30),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  SizedBox(
+                    height: 30,
+                  ),
+                  Label(
+                    text: "Hi, Mahmoud",
+                    size: 25,
+                    textColor: AppConst.kPrimaryColor,
+                    // style: appTitle,
+                  ),
+                  IPetCustomSizedBox(
+                    height: 20,
+                  ),
+                  SizedBox(
+                      width: size.width * 0.7,
+                      child: Label(
+                        text:
+                            "Check out the new products, groups, events, places and more!",
+                        // style: contentBlack,
+                      )),
+                  SizedBox(
+                    height: 50,
+                  ),
+                  // DogCard(),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
-                      CustomGridViewCard(
-                        imgScr: "assets/images/lolo_dog.png",
-                        title: "Meet our lovely dogs walking with us",
-                        location: "Cairo, Egypt",
-                        members: "8 memmbers",
-                        orgBy: "Laura",
+                      Label(
+                        text: "Recommended".toUpperCase(),
+                        size: 17,
+                        fontWeight: FontWeight.bold,
                       ),
-                      CustomGridViewCard(
-                        imgScr: "assets/images/pet_places.png",
-                        title: "Meet our lovely dogs walking with us",
-                        location: "Valencia, Spain",
-                        members: "8 memmbers",
-                        orgBy: "Laura",
+                      Label(
+                        text: "Show more",
+                        textColor: AppConst.kPrimaryColor,
+                        size: 12,
                       ),
-                      // WalkGroupCard()
                     ],
                   ),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Label(
-                      text: "Walk groups".toUpperCase(),
-                      size: 17,
-                      fontWeight: FontWeight.bold,
+                  SizedBox(
+                    height: 20,
+                  ),
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: <Widget>[
+                        CustomGridViewCard(
+                          imgScr: "assets/images/lolo_dog.png",
+                          title: "Meet our lovely dogs walking with us",
+                          location: "Cairo, Egypt",
+                          members: "8 memmbers",
+                          orgBy: "Laura",
+                        ),
+                        CustomGridViewCard(
+                          imgScr: "assets/images/pet_places.png",
+                          title: "Meet our lovely dogs walking with us",
+                          location: "Valencia, Spain",
+                          members: "8 memmbers",
+                          orgBy: "Laura",
+                        ),
+                        // WalkGroupCard()
+                      ],
                     ),
-                    Label(
-                      text: "Show more",
-                      textColor: AppConst.kPrimaryColor,
-                      size: 12,
-                    ),
-                  ],
-                ),
-                SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
-                      CustomGridViewCard(
-                        imgScr: "assets/images/pet_places.png",
-                        title: "Meet our lovely dogs walking with us",
-                        location: "Cairo, Egypt",
-                        members: "8 memmbers",
-                        orgBy: "Laura",
+                      Label(
+                        text: "Walk groups".toUpperCase(),
+                        size: 17,
+                        fontWeight: FontWeight.bold,
                       ),
-                      CustomGridViewCard(
-                        imgScr: "assets/images/pet_places.png",
-                        title: "Meet our lovely dogs walking with us",
-                        location: "Valencia, Spain",
-                        members: "8 memmbers",
-                        orgBy: "Laura",
+                      Label(
+                        text: "Show more",
+                        textColor: AppConst.kPrimaryColor,
+                        size: 12,
                       ),
-                      // WalkGroupCard()
                     ],
                   ),
-                ),
-              ],
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: <Widget>[
+                        CustomGridViewCard(
+                          imgScr: "assets/images/pet_places.png",
+                          title: "Meet our lovely dogs walking with us",
+                          location: "Cairo, Egypt",
+                          members: "8 memmbers",
+                          orgBy: "Laura",
+                        ),
+                        CustomGridViewCard(
+                          imgScr: "assets/images/pet_places.png",
+                          title: "Meet our lovely dogs walking with us",
+                          location: "Valencia, Spain",
+                          members: "8 memmbers",
+                          orgBy: "Laura",
+                        ),
+                        // WalkGroupCard()
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
+          ],
+        ),
+        Align(
+          alignment: Alignment.bottomCenter,
+          child: Container(
+            child: ValueListenableBuilder(
+                valueListenable: hideNavbar.visible,
+                builder: (context, bool value, child) => AnimatedContainer(
+                    duration: Duration(milliseconds: 500),
+                    height: value ? size.height * 0.117 : 0.0,
+                    child: IPetBottomAppBar(tabController: _tabController))),
           ),
-        ],
-      ),
+        ),
+      ]),
     );
   }
 }
