@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:ipetmobile/constants/constants.dart';
+import 'package:ipetmobile/utils/hide_btn_nav_bar.dart';
 import 'package:ipetmobile/views/dash_board/components/custom_grid_view_card.dart';
 import 'package:ipetmobile/widgets/app_drawer/app_drawer.dart';
 import 'package:ipetmobile/widgets/common/ipet_bottom_app_bar.dart';
@@ -22,6 +24,7 @@ class _DashBoardScreenState extends State<DashBoardScreen>
     with SingleTickerProviderStateMixin {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   TabController _tabController;
+  final HideNavbar hideNavbar = HideNavbar();
 
   @override
   void initState() {
@@ -67,8 +70,14 @@ class _DashBoardScreenState extends State<DashBoardScreen>
       ),
       iPetDrawer: AppDrawer(),
       // iPetBottomAppBar: IPetBottomCommonAppBar(tabController: _tabController),
-      iPetBottomAppBar: IPetBottomAppBar(tabController: _tabController),
+      iPetBottomAppBar: ValueListenableBuilder(
+          valueListenable: hideNavbar.visible,
+          builder: (context, bool value, child) => AnimatedContainer(
+              duration: Duration(milliseconds: 500),
+              height: value ? size.height * 0.117 : 0.0,
+              child: IPetBottomAppBar(tabController: _tabController))),
       body: ListView(
+        controller: hideNavbar.controller,
         children: <Widget>[
           Padding(
             padding:
