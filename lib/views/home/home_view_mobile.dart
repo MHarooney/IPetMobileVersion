@@ -3,14 +3,11 @@ import 'package:ipetmobile/viewmodels/home_viewmodel.dart';
 import 'package:ipetmobile/views/dash_board/dash_board_page_mobile.dart';
 import 'package:ipetmobile/widgets/app_drawer/app_drawer.dart';
 import 'package:ipetmobile/widgets/base_model_widget.dart';
-import 'package:ipetmobile/widgets/common/ipet_custom_scaffold.dart';
 
 class HomeMobilePortrait extends BaseModelWidget<HomeViewModel> {
   @override
   Widget build(BuildContext context, HomeViewModel model) {
-    return IPetCustomScaffold(
-      body: DashBoardScreen(),
-    );
+    return DashBoardScreen();
   }
 }
 

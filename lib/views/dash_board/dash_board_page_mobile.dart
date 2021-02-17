@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:ipetmobile/constants/constants.dart';
 import 'package:ipetmobile/views/dash_board/components/custom_grid_view_card.dart';
 import 'package:ipetmobile/widgets/app_drawer/app_drawer.dart';
+import 'package:ipetmobile/widgets/common/ipet_bottom_app_bar.dart';
 import 'package:ipetmobile/widgets/common/ipet_custom_icon.dart';
 import 'package:ipetmobile/widgets/common/ipet_custom_scaffold.dart';
 import 'package:ipetmobile/widgets/common/ipet_top_appbar.dart';
@@ -12,12 +13,30 @@ import 'package:ipetmobile/widgets/ipet_custom_sizedbox.dart';
 import 'package:ipetmobile/widgets/label.dart';
 
 class DashBoardScreen extends StatefulWidget {
+  static String id = 'IPetHomeScreen';
   @override
   _DashBoardScreenState createState() => _DashBoardScreenState();
 }
 
-class _DashBoardScreenState extends State<DashBoardScreen> {
+class _DashBoardScreenState extends State<DashBoardScreen>
+    with SingleTickerProviderStateMixin {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
+  TabController _tabController;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _tabController = TabController(length: 5, vsync: this);
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    _tabController.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -25,7 +44,6 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
     return IPetCustomScaffold(
       ipKey: _scaffoldKey,
       iPetTopAppBar: IPetCustomTopBarWidget(
-        // if (orientation == Orientation.portrait)
         iPetFirstPart: orientation == Orientation.portrait
             ? MyCustomCard(
                 colour: Colors.transparent,
@@ -48,6 +66,8 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
         iPetLastPart: [],
       ),
       iPetDrawer: AppDrawer(),
+      // iPetBottomAppBar: IPetBottomCommonAppBar(tabController: _tabController),
+      iPetBottomAppBar: IPetBottomAppBar(tabController: _tabController),
       body: ListView(
         children: <Widget>[
           Padding(

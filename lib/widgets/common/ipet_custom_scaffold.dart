@@ -4,7 +4,7 @@ import 'package:ipetmobile/constants/constants.dart';
 class IPetCustomScaffold extends StatelessWidget {
   final Widget body;
   final PreferredSizeWidget iPetTopAppBar;
-  final PreferredSizeWidget iPetBottomAppBar;
+  final Widget iPetBottomAppBar;
   final Key ipKey;
   final Color iPetBGScaffoldColor;
   final Widget iPetDrawer;

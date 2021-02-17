@@ -24,11 +24,13 @@ class CustomGridViewCard extends StatelessWidget {
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+
     return MyCustomCard(
       ipetDecoration: AppConst.greyBoxShadow,
       colour: null,
-      ipetWidth: MediaQuery.of(context).size.width * 0.60,
-      ipetHeight: MediaQuery.of(context).size.height * 0.40,
+      ipetWidth: size.width * 0.60,
+      ipetHeight: size.height * 0.40,
       childCard: LayoutBuilder(
         builder: (context, constraints) => Column(
           children: <Widget>[
