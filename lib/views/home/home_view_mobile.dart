@@ -6,8 +6,6 @@ import 'package:ipetmobile/widgets/base_model_widget.dart';
 import 'package:ipetmobile/widgets/common/ipet_custom_scaffold.dart';
 
 class HomeMobilePortrait extends BaseModelWidget<HomeViewModel> {
-  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
-
   @override
   Widget build(BuildContext context, HomeViewModel model) {
     return IPetCustomScaffold(
