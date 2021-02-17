@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/rendering.dart';
 
-class HideNavbar {
+class HideBottomNavbar {
   final ScrollController controller = ScrollController();
   ValueNotifier<bool> visible = ValueNotifier<bool>(true);
 
-  HideNavbar() {
+  HideBottomNavbar() {
     visible.value = true;
     controller.addListener(
       () {

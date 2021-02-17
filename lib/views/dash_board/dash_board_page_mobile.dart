@@ -24,7 +24,7 @@ class _DashBoardScreenState extends State<DashBoardScreen>
     with SingleTickerProviderStateMixin {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   TabController _tabController;
-  final HideNavbar hideNavbar = HideNavbar();
+  final HideBottomNavbar hideNavbar = HideBottomNavbar();
 
   @override
   void initState() {
