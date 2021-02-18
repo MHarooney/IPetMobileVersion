@@ -40,6 +40,7 @@ class AppConst {
   static const String kNamelNullError = "Please Enter your name";
   static const String kPhoneNumberNullError = "Please Enter your phone number";
   static const String kAddressNullError = "Please Enter your address";
+  static const String kTest = "Test";
 
   //Constants Texts
   static const String kNotNowTxt = "Not now!";
